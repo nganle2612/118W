@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"/>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous">
+    </script>
+    
+    <link rel="stylesheet" type="text/css" href="Style-.css"/>
+</head>
+<body>
+    <div>
+        <nav
+          class="navbar navbar-expand-lg navbar-light"
+          style="background-color: white">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="Home-Page.html">
+            <img src = "logo.PNG" alt = "logo" width = "90" height = "70"/></a>
+            
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="Home-Page.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="BuyRent.html">Buy/Rent</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="Sell.html">Sell</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="AboutUs.html">About Us</a>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Login.html">Login</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+    </div>
+
+      <!-- Background Image/Hero Text (aka header) -->
+      <div class="head-image">
+        <img height="350"/>
+        <div class="hero-text">
+          <h1><b>Contact Us To List Your Selling</b></h1>
+        </div>
+      </div>
+  
+      <!-- Contact Form -->
+      <div class="contact-info">
+        <form method="POST" class="row g-3">
+          <!-- input First Name -->
+          <div class="col-md-6">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" id="firstName" class="form-control" required />
+          </div>
+          <!-- input Last Name -->
+          <div class="col-md-6">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" id="lastName" class="form-control" required />
+          </div>
+          <!-- input Email -->
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              placeholder="email@example.com"
+              required
+            />
+          </div>
+          <!-- input Phone Number -->
+          <div class="col-6">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              class="form-control"
+              placeholder="(xxx)xxx-xxxx"
+              required
+            />
+          </div>
+          <!-- input Message Subject -->
+          <div class="col-md-12">
+            <label for="subject" class="form-label">Subject</label>
+            <input type="text" id="subject" class="form-control" />
+          </div>
+          <!-- input Body of Message -->
+          <div class="col-12">
+            <label for="comments" class="form-label">Message</label>
+            <textarea
+              name="comments"
+              id="comments"
+              class="form-control"
+              rows="4"
+              cols="36"
+              required
+            ></textarea>
+          </div>
+          <!-- Send Button -->
+          <div class="col-12">
+            <button
+              type="button"
+              onclick="send()"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#contactModal"
+            >
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Link to Database -->
+      <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script> 
+      <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script> 
+      <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script> 
+      <script src="sell.js"></script> 
+  
+      <!-- Modal -->
+      <div class="modal fade" id="contactModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="contactModalLabel">Your message is sent</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">Thank you. We have received your message and will contact you soon
+                regarding your request.
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
